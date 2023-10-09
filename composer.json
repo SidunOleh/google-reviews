@@ -1,0 +1,18 @@
+{
+    "name": "sova/google-reviews",
+    "description": "wp-plugin to fetch google reviews",
+    "type": "library",
+    "authors": [{
+        "name": "Oleh Sidun",
+        "email": "sidunoleh@gmail.com"
+    }],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "GoogleReviews\\": "src/app"
+        },
+        "files": ["src/app/utils.php"]
+    }
+}
