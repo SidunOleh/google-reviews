@@ -48,7 +48,7 @@
 
         <?php if ( $total > 10): ?>
         <div class="reviews__load">
-            <span id="load-more" data-page="0">
+            <span id="load-more" data-page="1">
                 <?php _e( 'Load more', 'google-reviews' ) ?>
             </span>
         </div>
