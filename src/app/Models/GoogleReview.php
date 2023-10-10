@@ -140,6 +140,6 @@ class GoogleReview extends Model
 
     public function avgRating(): float
     {
-        return $this->db->get_var( "SELECT CAST(AVG(`rating`) AS DECIMAL(10,1)) FROM {$this->table}" );
+        return ( float ) $this->db->get_var( "SELECT CAST(AVG(`rating`) AS DECIMAL(10,1)) FROM {$this->table}" );
     }
 }
