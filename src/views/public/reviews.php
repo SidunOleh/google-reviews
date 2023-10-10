@@ -20,20 +20,26 @@
     </div>
     
     <div class="review__text">
-        <div class="review__excerpt">
-            <?php echo mb_substr( $review[ 'comment' ], 0, 100 ) . '...' ?>
-        </div>
-        <div class="review__full">
-            <?php echo $review[ 'comment' ] ?>
-        </div>
-        <div class="review__textbtn">
-            <span class="readmore textbtn">
-                <?php _e( 'Read more', 'google-reviews' ) ?>
-            </span>
-            <span class="hidemore textbtn">
-                <?php _e( 'Hide', 'google-reviews' ) ?>
-            </span>
-        </div>
+        <?php if ( mb_strlen( $review[ 'comment' ] ) > 100 ): ?>
+            <div class="review__excerpt">
+                <?php echo mb_substr( $review[ 'comment' ], 0, 100 ) . '...' ?>
+            </div>
+            <div class="review__full">
+                <?php echo $review[ 'comment' ] ?>
+            </div>
+            <div class="review__textbtn">
+                <span class="readmore textbtn">
+                    <?php _e( 'Read more', 'google-reviews' ) ?>
+                </span>
+                <span class="hidemore textbtn">
+                    <?php _e( 'Hide', 'google-reviews' ) ?>
+                </span>
+            </div>
+        <?php else: ?>
+            <div>
+                <?php echo $review[ 'comment' ] ?>
+            </div>
+        <?php endif ?>
     </div>
 
     <div class="review__bottom">
@@ -43,7 +49,7 @@
                 <?php _e( 'Posted on', 'google-reviews' ) ?>
             </span>
             <br>
-            <a href="https://g.co/kgs/<?php echo $review[ 'review_id' ] ?>" target="_blank">
+            <a href="" target="_blank">
                 <?php _e( 'Google', 'google-reviews' ) ?>
             </a>
         </div>

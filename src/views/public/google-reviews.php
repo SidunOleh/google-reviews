@@ -293,6 +293,7 @@
     
     .review__photo {
         border-radius: 50%;
+        width: 65px;
     }
     
     .review__author {
