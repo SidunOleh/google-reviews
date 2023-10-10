@@ -19,10 +19,10 @@ class Activator
 
         $sql = "CREATE TABLE IF NOT EXISTS {$base_prefix}google_reviews (
             id               BIGINT(20)    UNSIGNED NOT NULL  AUTO_INCREMENT,
-            review_id        INT                    NOT NULL,
-            author_name      VARCHAR(100)           NOT NULL,
-            author_photo_url VARCHAR(100)           NOT NULL,
-            rating           VARCHAR(100)           NOT NULL,
+            review_id        VARCHAR(255)           NOT NULL,
+            author_name      VARCHAR(255)           NOT NULL,
+            author_photo_url VARCHAR(255)           NOT NULL,
+            rating           INT                    NOT NULL,
             comment          TEXT                   NOT NULL,
             created_at       DATETIME               NOT NULL,
             PRIMARY KEY(id)

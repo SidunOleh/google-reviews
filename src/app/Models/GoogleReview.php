@@ -55,8 +55,8 @@ class GoogleReview extends Model
         
         if ( ! $accounts ) return null;
 
-        $accountId = explode( '/', $accounts[0]->name )[0];
-        
+        $accountId = explode( '/', $accounts[0][ 'name' ] )[1];
+
         return $accountId;
     }
 
@@ -67,7 +67,7 @@ class GoogleReview extends Model
 
         if ( ! $locations ) return null;
 
-        $locationId = explode( '/', $locations[0]->name )[0];
+        $locationId = explode( '/', $locations[0][ 'name' ] )[1];
         
         return $locationId;
     }
@@ -81,10 +81,10 @@ class GoogleReview extends Model
                 ->format( 'Y-m-d h:i:s' );
             $values .= "(
                 '{$review['reviewId']}', 
-                '{$review['reviewer']['profileName']}', 
-                '{$review['reviewer']['profilePhoto']}', 
+                '{$review['reviewer']['displayName']}', 
+                '{$review['reviewer']['profilePhotoUrl']}', 
                 '{$rating}', 
-                '{$review['comment']}',
+                '" . $this->db->_real_escape( $review['comment'] ) . "', 
                 '{$createdAt}'
             ),";
         }
@@ -97,7 +97,7 @@ class GoogleReview extends Model
             author_photo_url, 
             rating, comment, 
             created_at
-        ) VALUES $values" );
+        ) VALUES {$values}" );
     }
 
     public function delete(): void
