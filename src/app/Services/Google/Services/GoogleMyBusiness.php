@@ -12,7 +12,7 @@ class GoogleMyBusiness extends GoogleService
         $nextPageToken = null;
         while ( true ) {
             $response = $this->getReviewsPage( $accountId, $locationId, $nextPageToken );
-            array_merge( $reviews, $response[ 'reviews' ] );
+            $reviews = array_merge( $reviews, $response[ 'reviews' ] );
             if ( isset( $response[ 'nextPageToken' ] ) ) {
                 $nextPageToken = $response[ 'nextPageToken' ];
             } else {
