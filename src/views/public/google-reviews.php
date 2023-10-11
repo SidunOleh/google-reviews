@@ -137,7 +137,7 @@
         -webkit-transition: 0.3s all linear;
         transition: 0.3s all linear;
         position: fixed;
-        z-index: 1000;
+        z-index: 10000;
         top: 0;
         left: 0;
         height: 100vh;
@@ -384,7 +384,7 @@
     
     .reviews-btn {
         position: fixed;
-        z-index: 1000;
+        z-index: 10000;
         top: 50%;
         left: 20px;
         -webkit-transform: translate(0, -50%);
