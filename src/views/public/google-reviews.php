@@ -442,12 +442,13 @@
     body.reviews-open::before {
         content: "";
         position: fixed;
+        z-index: 9999;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background-color: black;
-        opacity: 0.3;
+        opacity: 0.4;
     }
     
     .reviews::-webkit-scrollbar {
