@@ -31,9 +31,9 @@
                     <?php printf( __( '%d reviews', 'google-reviews' ), $total ) ?>
                 </div>
             </div>
-            <?php if ( isset( $attr[ 'write-url' ] ) ): ?>
+            <?php if ( $write_url = apply_filters( 'google_reviews_write_url', false ) ): ?>
             <div class="reviews__write">
-                <a href="<?php echo $attr[ 'write-url' ] ?>" target="_blank">
+                <a href="<?php echo $write_url ?>" target="_blank">
                     <?php _e( 'Write a review', 'google-reviews' ) ?>
                 </a>
             </div>

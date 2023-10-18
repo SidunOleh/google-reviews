@@ -49,9 +49,11 @@
                 <?php _e( 'Posted on', 'google-reviews' ) ?>
             </span>
             <br>
-            <a href="" target="_blank">
+            <?php if ( $reviews_url = apply_filters( 'google_reviews_url', false ) ): ?>
+            <a href="<?php echo $reviews_url ?>" target="_blank">
                 <?php _e( 'Google', 'google-reviews' ) ?>
             </a>
+            <?php endif ?>
         </div>
     </div>
 
